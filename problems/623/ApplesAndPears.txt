@@ -1,0 +1,82 @@
+PROBLEM STATEMENT
+A square board is divided into N rows by N columns of unit square cells.
+Some cells of the board are empty.
+Each of the other cells contains either an apple or a pear.
+You are given the current state of the board as a vector <string> board.
+In board, the character '.' denotes an empty cell, 'A' denotes an apple, and 'P' denotes a pear.
+
+You are allowed to perform at most K moves.
+In each move, you can pick up one fruit (an apple or a pear) and place it onto any empty cell.
+(The new cell doesn't have to be adjacent to the old one.)
+Note that you cannot remove fruit from the board, you are only allowed to move it onto different cells.
+
+A rectangular section of the board is called uniform if all cells in the rectangle are the same:
+that is, either all those cells contain apples, or they all contain pears, or all of them are empty.
+After you are done moving the fruit, you want to have a uniform rectangle that is as large as possible somewhere on the board.
+Return the largest possible area of such a rectangle.
+
+DEFINITION
+Class:ApplesAndPears
+Method:getArea
+Parameters:vector <string>, int
+Returns:int
+Method signature:int getArea(vector <string> board, int K)
+
+
+CONSTRAINTS
+-N will be between 1 and 50, inclusive.
+-board will contain exactly N elements.
+-Each element of board will contain exactly N characters.
+-Each character in board will be '.', 'A', or 'P'.
+-K will be between 0 and 1000, inclusive.
+
+
+EXAMPLES
+
+0)
+{".A",
+ "P."}
+0
+
+Returns: 1
+
+As K=0, you are not allowed to make any moves.
+Currently, the largest uniform rectangle is just a single cell.
+
+1)
+{".A",
+ "P."}
+1
+
+Returns: 2
+
+Move any piece of fruit onto any of the two currently empty cells.
+After the move, there will be two adjacent empty cells.
+These form a 2x1 uniform rectangle.
+
+2)
+{".PP", 
+ "PPA", 
+ "PAP"}
+3
+
+Returns: 6
+
+In three moves, you can create a 3x2 rectangle of cells that contain pears.
+
+3)
+{"A.P.PAAPPA",
+ "PPP..P.PPP",
+ "AAP.A.PAPA",
+ "P.PA.AAA.A",
+ "...PA.P.PA",
+ "P..A.A.P..",
+ "PAAP..A.A.",
+ "PAAPPA.APA",
+ ".P.AP.P.AA",
+ "..APAPAA.."}
+10
+
+Returns: 21
+
+

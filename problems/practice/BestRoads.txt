@@ -1,0 +1,62 @@
+PROBLEM STATEMENT
+There are N cities numbered 0 to N-1.  The j-th character of the i-th element of roads is 'Y' if there is a bidirectional road between cities i and j, and 'N' otherwise.
+
+The road connecting cities A and B, where A < B, has a higher priority than the road connecting cities C and D, where C < D, if either A < C or (A = C and B < D).  A set of roads is a list of one or more roads sorted from highest to lowest priority.  A set S1 has a higher priority than set S2 if road S1[i] has a higher priority than road S2[i], where i is the earliest index at which the two sets differ. A set of roads is called connected if there's a path between any pair of cities containing only the roads from this set.
+
+Your task is to find the connected set with the highest priority containing exactly M roads.  Return a vector <int> where the i-th element is the number of roads in that set containing city i as an endpoint.  Return an empty vector <int> if there is no such set.
+
+DEFINITION
+Class:BestRoads
+Method:numberOfRoads
+Parameters:vector <string>, int
+Returns:vector <int>
+Method signature:vector <int> numberOfRoads(vector <string> roads, int M)
+
+
+CONSTRAINTS
+-roads will contain between 1 and 50 elements, inclusive.
+-M will be between N-1 and 1,000, inclusive, where N is the number of elements in roads. 
+-Each element of roads will contain exactly N characters 'Y' or 'N', where N is the number of elements in roads. 
+-For each i and j roads[i][j] will be equal to roads[j][i]. 
+-For each i roads[i][i] will be equal to 'N'. 
+
+
+EXAMPLES
+
+0)
+{"NYYYY","YNYYY","YYNYY","YYYNY","YYYYN"}
+10
+
+Returns: {4, 4, 4, 4, 4 }
+
+All roads should be selected.
+
+1)
+{"NYY","YNY","YYN"}
+2
+
+Returns: {2, 1, 1 }
+
+The set must contain roads 0-1 and 0-2.
+
+2)
+{"NYNNY","YNNNY","NNNNN","NNNNY","YYNYN"}
+4
+
+Returns: { }
+
+City 2 can not be connected to others.
+
+3)
+{"NYYNYYYN","YNNNNYYN","YNNNYNNN","NNNNNNYY","YNYNNNNN","YYNNNNYY","YYNYNYNY","NNNYNYYN"}
+10
+
+Returns: {5, 3, 2, 2, 2, 2, 3, 1 }
+
+4)
+{"NNYY","NNYY","YYNN","YYNN"}
+5
+
+Returns: { }
+
+There are totally 4 roads, so we can't choose 5 of them.
