@@ -1,0 +1,85 @@
+PROBLEM STATEMENT
+
+Devu likes to play with binary strings: strings in which each character is either '0' or '1'.
+
+
+
+
+
+Devu calls a binary string beautiful if it is nonempty and no two consecutive characters in the string are equal..
+The beauty level of a binary string is the number of beautiful substrings it contains.
+For example, the beauty level of "0001" is 5.
+This string contains four beautiful substrings of length 1 and one beautiful substring of length 2.
+
+
+
+
+
+You are given ints n and cnt.
+Return the number of binary strings of length n with beauty level equal to cnt.
+
+
+DEFINITION
+Class:DevuAndBeautifulSubstrings
+Method:countBeautifulSubstrings
+Parameters:int, int
+Returns:long long
+Method signature:long long countBeautifulSubstrings(int n, int cnt)
+
+
+CONSTRAINTS
+-n will be between 1 and 50, inclusive.  
+-cnt will be between 0 and n * (n + 1) / 2, inclusive.
+
+
+EXAMPLES
+
+0)
+2
+2
+
+Returns: 2
+
+There are four binary strings of length 2: "00", "01", "10", and "11".
+Their beauty levels are 2, 3, 3, and 2, respectively.
+Hence, there are two binary strings of length 2 with beauty level 2.
+
+1)
+2
+1
+
+Returns: 0
+
+There is no binary string of length 2 with beauty level 1.
+
+2)
+3
+4
+
+Returns: 4
+
+
+
+3)
+15
+35
+
+Returns: 642
+
+
+
+4)
+40
+820
+
+Returns: 2
+
+
+
+5)
+50
+94
+
+Returns: 32357325751902
+
+
