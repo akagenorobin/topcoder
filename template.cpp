@@ -15,18 +15,18 @@ using namespace std;
 
 class $CLASSNAME${
 public:
-  $RC$ $METHODNAME$($METHODPARMS$) {
+    $RC$ $METHODNAME$($METHODPARMS$) {
+        
+    }
     
-  }
-
-  $TESTCODE$
+    $TESTCODE$
 };
 
 $BEGINCUT$
 int main(){
-  $CLASSNAME$ test;
-  int n;
-  cin >> n;
-  test.run_test(n);
+    $CLASSNAME$ test;
+    int n;
+    cin >> n;
+    test.run_test(n);
 }
 $ENDCUT$
