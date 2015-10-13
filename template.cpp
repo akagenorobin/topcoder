@@ -16,9 +16,9 @@ using namespace std;
 class $CLASSNAME${
 public:
     $RC$ $METHODNAME$($METHODPARMS$) {
-        
+
     }
-    
+
     $TESTCODE$
 };
 
@@ -26,6 +26,7 @@ $BEGINCUT$
 int main(){
     $CLASSNAME$ test;
     int n;
+    cout << "test number: ";
     cin >> n;
     test.run_test(n);
 }

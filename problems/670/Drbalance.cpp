@@ -41,9 +41,12 @@ public:
               }
           }
           for(int i=p; i<n; i++){
-              v[i] += 2;
-              if(v[i] >= 0) nega -= 1;
+              if(v[i] < 0){
+                  v[i] += 2;
+                  if(v[i] >= 0) nega -= 1;
+              }
           }
+          cout << s << endl;
           count++;
       }
       return count;
@@ -69,8 +72,11 @@ public:
 // BEGIN CUT HERE
 int main(){
   Drbalance test;
-  int n;
-  cin >> n;
-  test.run_test(n);
+  //int n;
+  //cin >> n;
+  //test.run_test(n);
+  cout << test.lesscng("-----+-----+--++---+---++---+--+----+-+---", 22) << endl;
+  cout << test.lesscng("---+------+-+-++--+--+---+-+------", 28) << endl;
+
 }
 // END CUT HERE
